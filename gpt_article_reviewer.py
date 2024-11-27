@@ -112,17 +112,6 @@ def fetch_page_content(url, proxy_setting, url_retries, url_timeout):
     print(f"Max number of retries attempted({url_retries}).  Skipping.")
     return None
 
-def save_to_csv(output_file, data):
-    with open(output_file, mode='w', newline='', encoding='utf-8') as file:
-        writer = csv.writer(file)
-        writer.writerow(['URL', 'Content', 'Suggestions'])
-        for row in data:
-            writer.writerow(row)
-
-def save_to_xlsx(output_file, data):
-    df = pd.DataFrame(data)
-    df.to_excel(output_file, index=False)
-
 def scrape_intel_article_meta_data(soup):
     meta_data = {}
     # Extract topic
