@@ -271,7 +271,7 @@ def main():
 
         access_token, expiry_time = check_token_expiry(access_token, expiry_time, CLIENT_ID, CLIENT_SECRET)
         suggestions = invoke_model(access_token, system_prompt, article_data_json, proxy_setting)
-        with open(f"{article_data['Article_ID']}.md", "w") as file:
+        with open(f"./reviewed_articles/{article_data['Article_ID']}.md", "w") as file:
             file.write(suggestions)
         
         print(f"Review and suggestions saved to {article_data['Article_ID']}.md")
