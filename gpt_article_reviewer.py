@@ -4,7 +4,6 @@ import time
 import pandas as pd
 from bs4 import BeautifulSoup
 from dotenv import load_dotenv
-import csv
 import re
 import time
 from markdownify import markdownify as md
